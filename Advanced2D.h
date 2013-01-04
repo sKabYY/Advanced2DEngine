@@ -9,6 +9,7 @@
 #include "Timer.h"
 
 #include "Camera.h"
+#include "Light.h"
 #include "Mesh.h"
 
 #define VERSION_MAJOR 1

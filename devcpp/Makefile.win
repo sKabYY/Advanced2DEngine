@@ -1,23 +1,22 @@
 # Project: Engine
-# Makefile created by Dev-C++ 4.9.9.2
+# Makefile created by Dev-C++ 5.3.0.3
 
-CPP  = g++.exe
-CC   = gcc.exe
-WINDRES = windres.exe
-RES  = 
-OBJ  = ../obj/Advanced2D.o ../obj/Timer.o ../obj/winmain.o ../obj/Camera.o ../obj/Mesh.o $(RES)
-LINKOBJ  = ../obj/Advanced2D.o ../obj/Timer.o ../obj/winmain.o ../obj/Camera.o ../obj/Mesh.o $(RES)
-LIBS =  -L"C:/Dev-Cpp/lib"  
-INCS =  -I"C:/Dev-Cpp/include" 
-CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
-BIN  = ../lib/libAdvanced2D.a
-CXXFLAGS = $(CXXINCS)  
-CFLAGS = $(INCS)  
-RM = rm -f
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = ../obj/Advanced2D.o ../obj/Timer.o ../obj/winmain.o ../obj/Camera.o ../obj/Mesh.o ../obj/Light.o $(RES)
+LINKOBJ  = ../obj/Advanced2D.o ../obj/Timer.o ../obj/winmain.o ../obj/Camera.o ../obj/Mesh.o ../obj/Light.o $(RES)
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include"
+BIN      = ../lib/libAdvanced2D.a
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm -f
 
 .PHONY: all all-before all-after clean clean-custom
 
-all: all-before ../lib/libAdvanced2D.a all-after
+all: all-before $(BIN) all-after
 
 
 clean: clean-custom
@@ -41,3 +40,6 @@ $(BIN): $(LINKOBJ)
 
 ../obj/Mesh.o: ../Mesh.cc
 	$(CPP) -c ../Mesh.cc -o ../obj/Mesh.o $(CXXFLAGS)
+
+../obj/Light.o: ../Light.cc
+	$(CPP) -c ../Light.cc -o ../obj/Light.o $(CXXFLAGS)
